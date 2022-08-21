@@ -1,0 +1,51 @@
+main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calender {
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 2px #505050;
+}
+
+.calender-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.calender-title button {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #505050;
+}
+
+.calender-title button:hover {
+    cursor: pointer;
+    background: #b10127;
+    transition: all 0.2s;
+}
+
+.calender-table {
+    border-collapse: collapse;
+}
+
+.calender-table thead {
+    background: #b10127;
+}
+
+.calender-table th, .calender-table td {
+    padding: 15px;
+    text-align: center;
+}
+
+.calender-table thead{
+    border: 2px solid #D5D5D5;
+}
+
+.dateActive {
+    background: #b10127;
+    border-radius: 5px;
+}

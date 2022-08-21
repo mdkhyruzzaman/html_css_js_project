@@ -1,0 +1,90 @@
+main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}
+
+.cv-main-section {
+    width: 794px;
+    padding: 96px;
+    background: #fff;
+    box-shadow: 0px 0px 5px 2px #505050;
+}
+
+.cv-main-section .title-section {
+    background: #5f9bd3;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.cv-main-section .title-section h3 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.details-section.intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+}
+
+.details-section.intro .name {
+    color: #5f9bd3;
+    font-size: 24px;
+}
+
+.details-section.intro p {
+    margin-top: 15px;
+}
+
+.details-section.intro img {
+    height: 150px;
+    justify-self: flex-end;
+    border: 1px solid #000;
+}
+
+.details-section.personal-info table {
+    text-align: left;
+}
+
+.details-section.personal-info table th {
+    padding-right: 10px;
+    font-weight: 100;
+}
+
+.details-section.education table, .details-section.education table th, .details-section.education table td{
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.details-section.education table th, .details-section.education table td{
+    padding: 2px 5px;
+}
+
+.details-section.skill h4{
+    margin: 10px 0 5px;
+}
+
+.details-section.skill p {
+    margin-left: 15px;
+}
+
+.details-section.skill ul {
+    margin-left: 30px;
+}
+
+.details-section.references table{
+    border-collapse: collapse;
+}
+
+.details-section.references .subtable{
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.details-section.references .rname {
+    font-weight: 600;
+}

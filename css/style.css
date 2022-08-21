@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    background-color: #ededed;
+    color: #000407;
+}
+
+.container {
+    width: 992px;
+    margin: 0 auto;
+}
+
+.btn {
+    background: #b10127;
+    text-decoration: none;
+    color: #000407;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: #79031D;
+    transition: all 0.2s;
+}
+
+.projectTitle {
+    font-size: 20px;
+    color: #b10127;
+    padding: 10px 30px;
+    border: 2px solid #b10127;
+    border-radius: 50px;
+}
+
+header, footer {
+    background: #b10127;
+}
+
+/* HEADER SECTION */
+header .container{
+    min-height: 100px;
+    display: grid;
+    align-content: center;
+}
+
+/* NAVBAR SECTION */
+nav {
+    background: #dd0030;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 2px #5a5a5a ;
+}
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navbar ul li{
+    list-style: none;
+    padding: 20px;
+}
+
+.navbar ul li a {
+    color: #ededed;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    background: #79031D;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .2s;
+}
+
+/* MAIN SECTION */
+main .container {
+    height: 100%;
+    padding: 25px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    align-content: center;
+}
+
+main .container .blank_page {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #5a5a5a;
+    grid-column: 1/-1;
+    justify-self: center;
+}
+
+.card {
+    border: 1px solid #b10127;
+    border-bottom: 20px solid #b10127;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 1f 1f 1f;
+    justify-items: center;
+    box-shadow: 0 2px 5px 2px #5e5e5e;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #b10127;
+}
+
+.card .cardTitle {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* FOOTER SECTION */
+footer .container{
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    align-items: center;
+}
+
+footer .extraLink {
+    justify-self: end;
+    display: flex;
+    flex-direction: row;
+}
+
+footer .extraLink a {
+    background: #ededed;
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    
+}
+
+footer .extraLink a img {
+    height: 25px;
+    width: 25px;
+}
+
+footer .extraLink a:hover {
+    background: #79031D;
+    padding: 5px;
+    transition: all .2s;
+}

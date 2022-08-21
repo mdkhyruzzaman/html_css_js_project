@@ -1,0 +1,64 @@
+main .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}
+
+.reg_section {
+    background: #ededed;
+    box-shadow: 0px 0px 5px 2px #505050;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.reg_section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.reg_section form .formTitle{
+    font-size: 24px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: #b10127;
+}
+
+.reg_section form {
+    padding: 20px;
+    text-align: left;
+}
+
+.reg_section form th, .reg_section form td {
+    padding: 5px;
+}
+
+.reg_section form input[type=text], .reg_section form input[type=date], .reg_section form textarea, .reg_section form select {
+    width: 100%;
+    padding: 5px;
+    border: 2px solid #c0c0c0;
+    font-size: 16px;
+}
+
+.reg_section form label {
+    margin: 5px;
+}
+
+.reg_section form textarea {
+    min-height: 60px;
+    font-size: 16px;
+}
+
+.reg_section form input[type=text]:active, .reg_section form input[type=text]:focus {
+    outline: none;
+    border: 2px solid #b10127;
+}
+
+.reg_section form input[type=reset], .reg_section form input[type=submit] {
+    border: 0;
+}

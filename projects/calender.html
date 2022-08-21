@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Row Project</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/calender_style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="headText">            
+                <h1>ProjectHut</h1>
+                <p>Learn with practice</p>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../htmlwithcss.html">HTML & CSS</a></li>
+                <li><a class="active" href="../javascript.html">JavaScript</a></li>
+                <li><a href="../oracle.html">Oracle APEX</a></li>
+                <li><a href="../others.html">Others</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container">
+            <div class="calender">
+                <div class="calender-title">
+                    <button onclick="prevMonth()"> < Previous </button>
+                    <h3 id="monthWithYear"></h3>
+                    <button onclick="nextMonth()"> Next > </button>
+                </div>
+                <table class="calender-table">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tus</th>
+                            <th>Wes</th>
+                            <th>Thus</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <h4>Copyright &copy; 2022 projectHut. All Right Reserved </h4>
+            </div>
+            <div class="extraLink">
+                <a href="http://facebook.com" target="_blank" rel="noopener noreferrer"><img src="../images/icons/icons8-facebook-100.png" alt="facebook"></a>
+                <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><img src="../images/icons/icons8-instagram-100.png" alt="instageam"></a>
+                <a href="http://youtube.com" target="_blank" rel="noopener noreferrer"><img src="../images/icons/icons8-youtube-100.png" alt="youtube"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function cellCreate(year, month, skipDay) {
+            const d = new Date();
+            var today = d.getDate();
+            var rmonth = d.getMonth();
+            var tbody = "<tr>";
+            for(let date = 1-skipDay; date <= 31; date++ ){
+                if((date-1) < 0){
+                    tbody += "<td></td>";
+                } else if ((date-1+skipDay)%7 == 0 && (date-1+skipDay)!= 0) {    
+                    if(date == today && rmonth == month) {
+                        tbody += "</tr><tr><td class='dateActive'>"+date+"</td>";
+                    } else {
+                        tbody += "</tr><tr><td>"+date+"</td>";
+                    }
+                } else {
+                    if(date == today && rmonth == month) {
+                        tbody += "<td class='dateActive'>"+date+"</td>"
+                    } else {
+                        tbody += "<td>"+date+"</td>";
+                    }
+                }
+            }
+            tbody += "</tr>";
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            document.getElementById('tbody').innerHTML = tbody;
+            document.getElementById('monthWithYear').innerHTML = months[month]+' - '+year;
+        }
+        const curr_date = new Date();
+        var curr_year = curr_date.getFullYear();
+        var curr_month = curr_date.getMonth();
+        const date = new Date();
+        date.setFullYear(curr_year, curr_month, 1);
+        console.log(date);
+        cellCreate(date.getFullYear(), date.getMonth(), date.getDay());
+        function nextMonth() {
+            curr_month += 1;
+            date.setFullYear(curr_year, curr_month, 1);
+            cellCreate(date.getFullYear(), date.getMonth(), date.getDay());
+        }
+        function prevMonth() {
+            curr_month -= 1;
+            date.setFullYear(curr_year, curr_month, 1);
+            cellCreate(date.getFullYear(), date.getMonth(), date.getDay());
+        }
+    </script>
+</body>
+</html>
